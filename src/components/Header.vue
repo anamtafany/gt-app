@@ -1,0 +1,38 @@
+<script setup>
+import { useRouter } from 'vue-router'
+const router = useRouter()
+const openDashboard = () => {
+  router.push('/')
+}
+</script>
+
+<template>
+  <section class="dashboard-shell relative max-w-[426px] overflow-hidden">
+    <header
+      class="flex h-11.25 inset-x-0 fixed bottom-0 z-20 top-0 items-center justify-between bg-[#123f31] px-5.5 py-7 text-white shadow-sm"
+    >
+      <div class="flex items-center gap-2">
+        <button>
+          <img
+            src="../assets/logo-pondok.png"
+            @click="openDashboard"
+            class="flex h-8.75 w-8.75 items-center justify-center rounded-[7px] bg-white text-[12px] font-black text-[#1e4032]"
+          />
+        </button>
+
+        <div class="leading-[1.05] gap-1 flex flex-col text-left">
+          <div class="text-[12px] font-extrabold tracking-wide">Aplikasi</div>
+          <div class="mt-0.75 text-[7px] uppercase tracking-[1px] text-ugt-yellow">
+            Laporan Guru Tugas
+          </div>
+        </div>
+      </div>
+
+      <button class="mt-2.25 rounded-md bg-ugt-yellow px-2 py-0.75 text-[12px] text-[#254536]">
+        LOG OUT
+      </button>
+    </header>
+  </section>
+</template>
+
+<style></style>

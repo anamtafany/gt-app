@@ -1,0 +1,115 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-ugt-forest: #173f31;
+  --color-ugt-deep: #123d30;
+  --color-ugt-yellow: #f2d45f;
+  --color-ugt-paper: #f0f3f7;
+  --color-ugt-ink: #193f32;
+  --color-ugt-muted: #66746e;
+
+  --shadow-soft: 0 2px 8px rgba(21, 54, 43, 0.07);
+}
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1b4033;
+  background: #eef1f5;
+  font-synthesis: none;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#app {
+  min-height: 100%;
+  margin: 0;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+button,
+select {
+  cursor: pointer;
+}
+.card {
+  border: 1px solid #e5e9e8;
+  border-radius: 13px;
+  background: white;
+  box-shadow: 0 2px 5px rgba(26, 55, 45, 0.035);
+}
+.field-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 9px;
+  font-weight: 700;
+  color: #42564d;
+}
+.field {
+  width: 100%;
+  min-height: 32px;
+  border: 1px solid #dce2e0;
+  border-radius: 9px;
+  background: #fff;
+  padding: 7px 9px;
+  font-size: 10px;
+  color: #344c42;
+  outline: none;
+}
+.field:focus {
+  border-color: #e7c94d;
+  box-shadow: 0 0 0 2px rgba(242, 212, 95, 0.2);
+}
+.section-title {
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 800;
+  color: #214638;
+  margin: 0 0 12px;
+}
+.small-label {
+  display: block;
+  font-size: 9px;
+  font-weight: 700;
+  color: #52635b;
+  margin: 0 0 5px;
+}
+
+.dashboard-shell {
+  background: #41672b;
+}
+
+.dashboard-gradient {
+  background: linear-gradient(180deg, #1d4032 0%, #284b2d 36%, #4b7626 100%);
+}
+.dashboard-gradient-card {
+  background: linear-gradient(200deg, #9f8311 0%, #b19629 26%, #f7d242 70%);
+}
+.dashboard-menu {
+  height: 230px;
+}
+@media (min-height: 850px) {
+  .dashboard-menu {
+    height: 333px;
+    bottom: 103px;
+    padding-top: 72px;
+  }
+}
+@media (max-width: 360px) {
+  .dashboard-menu {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .dashboard-menu span.h-\[78px\] {
+    width: 66px;
+    height: 66px;
+  }
+}
