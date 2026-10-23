@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Form from '../components/Form.vue'
 import Dashboard from '../components/Dashboard.vue'
+import GuruTugas from '../components/GuruTugas.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -14,6 +15,11 @@ const router = createRouter({
       path: '/form',
       name: 'form',
       component: Form,
+    },
+    {
+      path: '/gt',
+      name: 'guru-tugas',
+      component: GuruTugas,
     },
   ],
 })

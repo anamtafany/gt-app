@@ -7,9 +7,9 @@ const openDashboard = () => {
 </script>
 
 <template>
-  <section class="dashboard-shell relative max-w-[426px] overflow-hidden">
+  <section class="flex items-center justify-center dashboard-shell relative overflow-hidden">
     <header
-      class="flex h-11.25 inset-x-0 fixed bottom-0 z-20 top-0 items-center justify-between bg-[#123f31] px-5.5 py-7 text-white shadow-sm"
+      class="flex h-11.25 fixed max-w-109.5 top-0 z-20 items-center justify-between bg-[#123f31] px-5.5 py-7 text-white shadow-sm left-1/2 -translate-x-1/2 w-full"
     >
       <div class="flex items-center gap-2">
         <button>
@@ -28,8 +28,8 @@ const openDashboard = () => {
         </div>
       </div>
 
-      <button class="mt-2.25 rounded-md bg-ugt-yellow px-2 py-0.75 text-[12px] text-[#254536]">
-        LOG OUT
+      <button class="mt-2.25 rounded-md bg-ugt-yellow px-2 py-1.75 text-[#254536]">
+        <p class="text-[12px] font-bold">LOG OUT</p>
       </button>
     </header>
   </section>
