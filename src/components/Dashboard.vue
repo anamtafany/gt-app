@@ -1,11 +1,5 @@
 <script setup>
-import { useRouter } from 'vue-router'
 import { ref, onMounted, onUnmounted } from 'vue'
-const router = useRouter()
-
-function openForm() {
-  router.push('/form')
-}
 
 // State untuk membuka/tutup dropdown
 const isOpen = ref(false)
@@ -64,7 +58,8 @@ onUnmounted(() => {
           Syachona Moh. Cholil Bangkalan
         </p>
 
-        <button
+        <RouterLink
+          to="/rekap"
           class="mx-auto mt-10 flex h-32.5 w-56 flex-col items-start justify-center rounded-[18px] bg-ugt-yellow dashboard-gradient-card px-3.25 text-left shadow-sm transition hover:brightness-105"
         >
           <span class="text-[60px] font-black leading-none text-[#234737]">12</span>
@@ -74,7 +69,7 @@ onUnmounted(() => {
           <p class="mt-2 whitespace-nowrap leading-[0.22] font-bold text-[12px] text-[#1c382d]">
             Laporan Bulanan Guru Tugas
           </p>
-        </button>
+        </RouterLink>
       </div>
       <div
         class="absolute z-20 inline-block text-left w-56 bottom-70 left-1/2 transform -translate-x-1/2"
@@ -124,7 +119,7 @@ onUnmounted(() => {
         class="dashboard-menu absolute inset-x-0 bottom-10 z-10 rounded-t-[40px] bg-white px-5 pt-14"
       >
         <div class="grid grid-cols-3 gap-1">
-          <button @click="openForm" class="flex flex-col items-center text-center">
+          <RouterLink to="/form" class="flex flex-col items-center text-center">
             <span
               class="mb-5 h-17.5 w-17.5 rounded-full bg-[#1d4032] flex justify-center items-center text-center"
             >
@@ -132,8 +127,8 @@ onUnmounted(() => {
             </span>
 
             <span class="whitespace-nowrap text-[11px] text-[#193a2d]">Form Laporan GT</span>
-          </button>
-          <button @click="openForm" class="flex flex-col items-center text-center">
+          </RouterLink>
+          <RouterLink to="/laporan" class="flex flex-col items-center text-center">
             <span
               class="mb-5 h-17.5 w-17.5 rounded-full bg-[#1d4032] flex justify-center items-center text-center"
             >
@@ -141,8 +136,8 @@ onUnmounted(() => {
             </span>
 
             <span class="whitespace-nowrap text-[11px] text-[#193a2d]">Laporan GT</span>
-          </button>
-          <button @click="openForm" class="flex flex-col items-center text-center">
+          </RouterLink>
+          <RouterLink to="/surat-tugas" class="flex flex-col items-center text-center">
             <span
               class="mb-5 h-17.5 w-17.5 rounded-full bg-[#1d4032] flex justify-center items-center text-center"
             >
@@ -150,7 +145,7 @@ onUnmounted(() => {
             </span>
 
             <span class="whitespace-nowrap text-[11px] text-[#193a2d]">Surat Tugas GT</span>
-          </button>
+          </RouterLink>
         </div>
       </div>
     </section>

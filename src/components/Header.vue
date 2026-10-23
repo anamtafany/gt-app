@@ -1,10 +1,4 @@
-<script setup>
-import { useRouter } from 'vue-router'
-const router = useRouter()
-const openDashboard = () => {
-  router.push('/')
-}
-</script>
+<script setup></script>
 
 <template>
   <section class="flex items-center justify-center dashboard-shell relative overflow-hidden">
@@ -12,13 +6,12 @@ const openDashboard = () => {
       class="flex h-11.25 fixed max-w-109.5 top-0 z-20 items-center justify-between bg-[#123f31] px-5.5 py-7 text-white shadow-sm left-1/2 -translate-x-1/2 w-full"
     >
       <div class="flex items-center gap-2">
-        <button>
+        <RouterLink to="/" class="flex items-center gap-2">
           <img
             src="../assets/logo-pondok.png"
-            @click="openDashboard"
             class="flex h-8.75 w-8.75 items-center justify-center rounded-[7px] bg-white text-[12px] font-black text-[#1e4032]"
           />
-        </button>
+        </RouterLink>
 
         <div class="leading-[1.05] gap-1 flex flex-col text-left">
           <div class="text-[12px] font-extrabold tracking-wide">Aplikasi</div>
