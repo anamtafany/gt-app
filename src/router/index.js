@@ -4,6 +4,8 @@ import Dashboard from '../components/Dashboard.vue'
 import GuruTugas from '../components/GuruTugas.vue'
 import Pjgt from '@/components/Pjgt.vue'
 import Laporan from '@/components/Laporan.vue'
+import Surat from '@/components/Surat.vue'
+import Rekap from '@/components/Rekap.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -32,6 +34,16 @@ const router = createRouter({
       path: '/laporan',
       name: 'laporan',
       component: Laporan,
+    },
+    {
+      path: '/surat',
+      name: 'surat',
+      component: Surat,
+    },
+    {
+      path: '/rekap',
+      name: 'rekap',
+      component: Rekap,
     },
   ],
 })

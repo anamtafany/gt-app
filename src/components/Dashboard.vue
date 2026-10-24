@@ -1,6 +1,9 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
+import { useLaporanStore } from '../stores/data'
+const store = useLaporanStore()
+
 // State untuk membuka/tutup dropdown
 const isOpen = ref(false)
 
@@ -62,7 +65,9 @@ onUnmounted(() => {
           to="/rekap"
           class="mx-auto mt-10 flex h-32.5 w-56 flex-col items-start justify-center rounded-[18px] bg-ugt-yellow dashboard-gradient-card px-3.25 text-left shadow-sm transition hover:brightness-105"
         >
-          <span class="text-[60px] font-black leading-none text-[#234737]">12</span>
+          <span class="text-[60px] font-black leading-none text-[#234737]">{{
+            store.totalLaporan
+          }}</span>
           <p class="mt-2 whitespace-nowrap uppercase font-extrabold text-[17px] text-[#1c382d]">
             Rekap
           </p>
@@ -137,7 +142,7 @@ onUnmounted(() => {
 
             <span class="whitespace-nowrap text-[11px] text-[#193a2d]">Laporan GT</span>
           </RouterLink>
-          <RouterLink to="/surat-tugas" class="flex flex-col items-center text-center">
+          <RouterLink to="/surat" class="flex flex-col items-center text-center">
             <span
               class="mb-5 h-17.5 w-17.5 rounded-full bg-[#1d4032] flex justify-center items-center text-center"
             >

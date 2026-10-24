@@ -1,5 +1,23 @@
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { useLaporanStore } from '../stores/data'
+
+const router = useRouter()
+const store = useLaporanStore()
+
+const judulInput = ref('')
+const penulisInput = ref('Khoirul Anam') // Nilai bawaan sesuai data gambar sebelumnya
+
+const simpanData = () => {
+  if (judulInput.value.trim() === '') return alert('Judul tidak boleh kosong!')
+
+  // Masukkan data baru ke dalam store
+  store.tambahLaporanBaru(judulInput.value, penulisInput.value)
+
+  // Alihkan navigasi kembali ke halaman list rekap
+  router.push('/laporan')
+}
 
 const levels = ['Idadiyah', 'Ibtidaiyah', 'Tsanawiyah', 'Aliyah']
 </script>
@@ -7,11 +25,47 @@ const levels = ['Idadiyah', 'Ibtidaiyah', 'Tsanawiyah', 'Aliyah']
 <template>
   <section class="mx-auto min-h-screen max-w-106.5 bg-[#eef1f5] pb-15 pt-10">
     <div class="px-2.5 pb-5 pt-3.25">
+      <h2 class="text-lg font-bold text-[#1e3d30] mb-4">Tambah Laporan Baru</h2>
+      <form @submit.prevent="simpanData" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Judul Laporan</label>
+          <input
+            v-model="judulInput"
+            type="text"
+            placeholder="Contoh: Laporan Bulan Oktober"
+            class="w-full p-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#1e3d30]"
+          />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Nama Penulis</label>
+          <input
+            v-model="penulisInput"
+            type="text"
+            class="w-full p-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#1e3d30]"
+          />
+        </div>
+        <div class="flex gap-2 justify-end pt-2">
+          <button
+            type="button"
+            @click="router.push('/laporan')"
+            class="px-4 py-2 text-xs font-medium text-gray-500 bg-gray-100 rounded-lg hover:bg-gray-200"
+          >
+            Batal
+          </button>
+          <button
+            type="submit"
+            class="px-4 py-2 text-xs font-semibold text-white bg-[#1e3d30] rounded-lg hover:bg-[#152a21]"
+          >
+            Simpan
+          </button>
+        </div>
+      </form>
+
       <!-- <div class="mb-1.25 text-[10px] font-extrabold uppercase tracking-wide text-[#28604c]">
         Halaman Guru Tugas
       </div> -->
       <!-- <h1 class="text-[16px] font-normal leading-tight text-[#244638]">Form Laporan GT</h1> -->
-      <form class="mt-4 space-y-2.5">
+      <!-- <form class="mt-4 space-y-2.5">
         <div class="card p-2.5">
           <div class="flex items-start justify-between gap-2">
             <div>
@@ -275,7 +329,7 @@ const levels = ['Idadiyah', 'Ibtidaiyah', 'Tsanawiyah', 'Aliyah']
             Simpan Laporan
           </button>
         </div>
-      </form>
+      </form> -->
     </div>
   </section>
 </template>

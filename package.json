@@ -15,6 +15,8 @@
     "@fortawesome/vue-fontawesome": "^3.3.3",
     "@headlessui/vue": "^1.7.23",
     "@tailwindcss/postcss": "^4.3.3",
+    "@vue/devtools-api": "^8.2.1",
+    "pinia": "^4.1.0",
     "postcss": "^8.5.31",
     "tailwindcss": "^4.3.3",
     "vue": "rc",
