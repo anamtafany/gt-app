@@ -81,6 +81,38 @@ const tahunAjaran = ref('1448-1449 H')
             </div>
           </div>
         </div>
+        <div
+          class="card p-2.5 min-h-screen pt-20 relative bg-white rounded-3xl w-full max-w-lg shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-gray-100 flex flex-col sm:flex-row items-center sm:items-start gap-6 font-san"
+        >
+          <!-- ID Card Relatif -->
+          <div
+            class="w-full aspect-[1.58/1] bg-white rounded-2xl shadow-xl border border-gray-200 flex items-center p-6 gap-6"
+          >
+            <!-- Kiri: Foto -->
+            <div
+              class="w-1/3 aspect-square rounded-xl bg-gray-300 border-2 border-indigo-500 flex-shrink-0"
+            >
+              <!-- Foto di sini -->
+            </div>
+
+            <!-- Kanan: Detail Informasi -->
+            <div class="flex flex-col justify-between h-full flex-1 py-2">
+              <div>
+                <div class="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-1">
+                  Tech Conference
+                </div>
+                <h2 class="text-xl font-black text-gray-800 leading-tight">Sarah Connor</h2>
+                <p class="text-sm text-gray-500">Keynote Speaker</p>
+              </div>
+
+              <div class="flex justify-between items-end border-t pt-2 border-gray-100">
+                <span class="text-[10px] font-mono text-gray-400">ACCESS: VIP</span>
+                <div class="w-16 h-6 bg-gray-800 rounded-sm"></div>
+                <!-- Ilustrasi Barcode -->
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

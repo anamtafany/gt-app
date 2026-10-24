@@ -3,6 +3,7 @@ import Form from '../components/Form.vue'
 import Dashboard from '../components/Dashboard.vue'
 import GuruTugas from '../components/GuruTugas.vue'
 import Pjgt from '@/components/Pjgt.vue'
+import Laporan from '@/components/Laporan.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -26,6 +27,11 @@ const router = createRouter({
       path: '/pjgt',
       name: 'pjgt',
       component: Pjgt,
+    },
+    {
+      path: '/laporan',
+      name: 'laporan',
+      component: Laporan,
     },
   ],
 })

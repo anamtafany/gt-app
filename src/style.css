@@ -92,7 +92,7 @@ select {
   background: linear-gradient(180deg, #1d4032 0%, #284b2d 36%, #4b7626 100%);
 }
 .dashboard-gradient-card {
-  background: linear-gradient(200deg, #9f8311 0%, #b19629 26%, #f7d242 70%);
+  background: linear-gradient(200deg, #f4d652 26%, #f0cc3b 70%);
 }
 .dashboard-menu {
   height: 230px;
