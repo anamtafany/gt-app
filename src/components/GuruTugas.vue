@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import useStatusStore from '../stores/data'
+// import useStatusStore from '../stores/data'
 
 const idGt = ref('1448001')
 const nama = ref('Khoirul Anam')
@@ -21,10 +21,7 @@ const handleImageUpload = (event) => {
   }
 }
 
-// const isActive = ref(true)
-
-// Panggil Pinia store
-const statusStore = useStatusStore()
+const aktif = ref(true)
 </script>
 
 <template>
@@ -47,40 +44,19 @@ const statusStore = useStatusStore()
                   Pondok Pesantren Syaichona Moh. Cholil Bangkalan
                 </p>
               </div>
-              <!-- <button
-                class="py-1 px-3 bg-yellow-500 text-green-900 rounded-[20px] flex items-center justify-center font-bold"
-              >
-                <p class="text-[10px]">Aktif</p>
-              </button> -->
-              <!-- <button
-                @click="isActive = !isActive"
-                class="py-1 px-3 bg-yellow-500 text-green-900 rounded-[20px] flex items-center justify-center font-bold"
-              >
-                {{ isActive ? 'Aktif' : 'Tidak Aktif' }}
-              </button> -->
 
               <button
-                @click="statusStore.toggleStatus()"
-                :disabled="!statusStore.isActive"
-                class="py-1 px-3 bg-yellow-500 rounded-[20px] flex items-center justify-center font-bold hover:bg-yellow-400 cursor-pointer disabled:bg-red-600"
+                v-if="aktif == true"
+                class="btn-warning py-1 px-3 bg-yellow-500 rounded-[20px] flex items-center justify-center text-green-900"
               >
-                <span :class="statusStore.isActive ? 'text-green-800' : 'text-white'"
-                  ><p class="tex-bold">{{ statusStore.isActive ? 'Aktif' : 'Tidak Aktif' }}</p>
-                </span>
+                <p class="text-[10px] font-bold">Aktif</p>
               </button>
-
-              <!-- Button Utama -->
-              <!-- <button
-                :disabled="!isActive"
-                :class="[
-                  'px-6 py-2.5 rounded-lg font-semibold transition-colors duration-200',
-                  isActive
-                    ? 'bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800 cursor-pointer shadow-md'
-                    : 'bg-gray-300 text-gray-500 cursor-not-allowed shadow-none',
-                ]"
+              <button
+                v-else
+                class="btn-error py-1.5 px-3 bg-red-700 rounded-[20px] flex items-center justify-center text-white"
               >
-                Kirim Data
-              </button> -->
+                <p class="text-[10px] font-bold">Tidak Aktif</p>
+              </button>
             </div>
 
             <!-- Bagian Tengah / Informasi Profil -->

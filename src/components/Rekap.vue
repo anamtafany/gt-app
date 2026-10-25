@@ -7,8 +7,14 @@ const store = useLaporanStore()
 <template>
   <section class="mx-auto min-h-screen max-w-106.5 bg-[#eef1f5] pb-12 pt-6">
     <div class="px-0.5 pb-5 pt-3.25">
+      <select class="select mt-9 rounded-[10px] bg-white w-full">
+        <option disabled selected>Tahun Ajaran</option>
+        <option>1448-1449 H</option>
+        <option>1448-1449 H</option>
+        <option>1448-1449 H</option>
+      </select>
       <div
-        class="card p-2.5 min-h-screen pt-10 pb-20 mt-7 mb-6 relative bg-white rounded-3xl w-full max-w-lg shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-gray-100 flex flex-col items-center sm:items-start gap-6 font-san"
+        class="card p-2.5 min-h-screen pt-10 pb-20 mt-3 mb-6 relative bg-white rounded-3xl w-full max-w-lg shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-gray-100 flex flex-col items-center sm:items-start gap-6 font-san"
       >
         <!-- HEADER -->
         <div class="flex justify-between items-center mb-6 w-full">
