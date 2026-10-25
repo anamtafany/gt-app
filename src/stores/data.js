@@ -26,3 +26,15 @@ export const useLaporanStore = defineStore('laporan', () => {
 
   return { daftarLaporan, totalLaporan, tambahLaporanBaru }
 })
+
+export default defineStore('statusStore', () => {
+  // Boolean state: true (aktif/kuning), false (tidak aktif/merah)
+  const isActive = ref(true)
+
+  // Fungsi untuk mengubah status
+  function toggleStatus() {
+    isActive.value = !isActive.value
+  }
+
+  return { isActive, toggleStatus }
+})

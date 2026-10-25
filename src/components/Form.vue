@@ -33,7 +33,7 @@ const daftarTugas = ref([
 //   router.push('/laporan')
 // }
 
-// const levels = ['Idadiyah', 'Ibtidaiyah', 'Tsanawiyah', 'Aliyah']
+const levels = ['Idadiyah', 'Ibtidaiyah', 'Tsanawiyah', 'Aliyah']
 </script>
 
 <template>
@@ -75,21 +75,22 @@ const daftarTugas = ref([
         </div>
       </form> -->
       <!-- Percobaan -->
-      <!-- <select class="select select-primary field w-20 bg-green-600">
-        <option disabled selected>Pick a language</option>
-        <option>Zig</option>
-        <option>Go</option>
-        <option>Rust</option>
-      </select> -->
 
-      <select class="select field w-20">
+      <select class="select rounded-[9px] bg-white w-full">
+        <option disabled selected>Pick a text editor</option>
+        <option>VScode</option>
+        <option>VScode fork</option>
+        <option>Another VScode fork</option>
+      </select>
+
+      <!-- <select class="select field w-20">
         <option disabled selected>Pick a color</option>
         <option>Crimson</option>
         <option>Amber</option>
         <option>Velvet</option>
-      </select>
+      </select> -->
 
-      <!-- Percobaan -->
+      <!-- Percobaan bawah -->
       <!-- <div class="mb-1.25 text-[10px] font-extrabold uppercase tracking-wide text-[#28604c]">
         Halaman Guru Tugas
       </div> -->
