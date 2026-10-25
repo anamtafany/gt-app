@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@plugin "daisyui";
 
 @theme {
   --color-ugt-forest: #173f31;

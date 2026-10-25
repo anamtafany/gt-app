@@ -1,4 +1,18 @@
 <script setup>
+// // BARU
+import { ref } from 'vue'
+
+// State reaktif untuk menampung data pilihan
+const selectedOption = ref('')
+
+// Contoh dataset dinamis yang biasa Anda gunakan
+const daftarTugas = ref([
+  { id: 1, nama: 'Desain Layout Flowbite' },
+  { id: 2, nama: 'Integrasi API Pinia Store' },
+  { id: 3, nama: 'Perbaikan Validasi Form' },
+])
+
+// // LAMA
 // import { ref } from 'vue'
 // import { useRouter } from 'vue-router'
 // import { useLaporanStore } from '../stores/data'
@@ -60,7 +74,22 @@
           </button>
         </div>
       </form> -->
+      <!-- Percobaan -->
+      <!-- <select class="select select-primary field w-20 bg-green-600">
+        <option disabled selected>Pick a language</option>
+        <option>Zig</option>
+        <option>Go</option>
+        <option>Rust</option>
+      </select> -->
 
+      <select class="select field w-20">
+        <option disabled selected>Pick a color</option>
+        <option>Crimson</option>
+        <option>Amber</option>
+        <option>Velvet</option>
+      </select>
+
+      <!-- Percobaan -->
       <!-- <div class="mb-1.25 text-[10px] font-extrabold uppercase tracking-wide text-[#28604c]">
         Halaman Guru Tugas
       </div> -->
