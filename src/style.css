@@ -66,6 +66,18 @@ select {
   color: #344c42;
   outline: none;
 }
+.field-select {
+  width: 100%;
+  min-height: 32px;
+  border: 1px solid #dce2e0;
+  border-radius: 9px;
+  /* background: #fff; */
+  padding: 18px 20px;
+
+  font-size: 10px;
+  color: #344c42;
+  outline: none;
+}
 .field:focus {
   border-color: #e7c94d;
   box-shadow: 0 0 0 2px rgba(242, 212, 95, 0.2);

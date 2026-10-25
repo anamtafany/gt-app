@@ -24,7 +24,7 @@ const daftarTugas = ref([
 // const penulisInput = ref('Khoirul Anam') // Nilai bawaan sesuai data gambar sebelumnya
 
 // const simpanData = () => {
-//   if (judulInput.value.trim() === '') return alert('Judul tidak boleh kosong!')
+//   if (judulInput.value.trim() === '') return alert('Form tidak boleh ada yang kosong!')
 
 //   // Masukkan data baru ke dalam store
 //   store.tambahLaporanBaru(judulInput.value, penulisInput.value)
@@ -39,7 +39,6 @@ const levels = ['Idadiyah', 'Ibtidaiyah', 'Tsanawiyah', 'Aliyah']
 <template>
   <section class="mx-auto min-h-screen max-w-106.5 bg-[#eef1f5] pb-15 pt-10">
     <div class="px-2.5 pb-5 pt-3.25">
-      <h2 class="text-lg font-bold text-[#1e3d30] mb-4">Tambah Laporan Baru</h2>
       <!-- <form @submit.prevent="simpanData" class="space-y-4">
         <div>
           <label class="block text-xs font-semibold text-gray-600 mb-1">Judul Laporan</label>
@@ -74,32 +73,21 @@ const levels = ['Idadiyah', 'Ibtidaiyah', 'Tsanawiyah', 'Aliyah']
           </button>
         </div>
       </form> -->
-      <!-- Percobaan -->
 
-      <select class="select rounded-[9px] bg-white w-full">
-        <option disabled selected>Pick a text editor</option>
-        <option>VScode</option>
-        <option>VScode fork</option>
-        <option>Another VScode fork</option>
-      </select>
-
-      <!-- <select class="select field w-20">
-        <option disabled selected>Pick a color</option>
-        <option>Crimson</option>
-        <option>Amber</option>
-        <option>Velvet</option>
-      </select> -->
-
-      <!-- Percobaan bawah -->
       <!-- <div class="mb-1.25 text-[10px] font-extrabold uppercase tracking-wide text-[#28604c]">
-        Halaman Guru Tugas
+        
       </div> -->
       <!-- <h1 class="text-[16px] font-normal leading-tight text-[#244638]">Form Laporan GT</h1> -->
-      <form class="mt-4 space-y-2.5">
+      <form class="mt-3 space-y-2.5">
         <div class="card p-2.5">
+          <h2 class="mt-1 mb-3 text-15px] font-extrabold uppercase tracking-wide text-[#28604c]">
+            Buat Laporan Baru
+          </h2>
           <div class="flex items-start justify-between gap-2">
             <div>
-              <h2 class="section-title mb-3 text-blue-600 md:text-green-600">Form Laporan GT</h2>
+              <h2 class="section-title mb-3 text-blue-600 md:text-green-600">
+                Form Laporan Guru Tugas
+              </h2>
               <p class="max-w-46.25 text-[10px] leading-[1.4] text-[#7a8580]">
                 Silakan isi form laporan guru tugas dengan lengkap dan benar.
               </p>
@@ -107,18 +95,18 @@ const levels = ['Idadiyah', 'Ibtidaiyah', 'Tsanawiyah', 'Aliyah']
           </div>
           <div class="mt-2.75 space-y-2.5">
             <label
-              ><span class="field-label">Laporan Bulan</span
-              ><select class="field w-20">
+              ><span class="field-label my-2">Laporan Bulan</span
+              ><select class="select select-sm field-select bg-white w-20">
                 <option>September</option>
                 <option>Oktober</option>
               </select>
             </label>
-            <label><span class="field-label">Nama GT</span><input class="field" /></label>
-            <label><span class="field-label">Nama PJGT</span><input class="field" /></label>
+            <label><span class="field-label my-4">Nama GT</span><input class="field" /></label>
+            <label><span class="field-label my-4">Nama PJGT</span><input class="field" /></label>
             <label
-              ><span class="field-label">Nama Madrasah/Ponpes</span><input class="field"
+              ><span class="field-label my-4">Nama Madrasah/Ponpes</span><input class="field"
             /></label>
-            <label><span class="field-label">Alamat</span><input class="field" /></label>
+            <label><span class="field-label my-4">Alamat</span><input class="field" /></label>
           </div>
         </div>
         <div class="card p-2.5">
@@ -127,7 +115,7 @@ const levels = ['Idadiyah', 'Ibtidaiyah', 'Tsanawiyah', 'Aliyah']
             <div class="small-label">{{ level }}</div>
             <div class="flex gap-1">
               <label
-                ><select class="field w-20">
+                ><select class="select select-sm field-select bg-white w-20">
                   <option>Kelas 1</option>
                   <option>Kelas 2</option>
                   <option>Kelas 3</option>
@@ -145,7 +133,7 @@ const levels = ['Idadiyah', 'Ibtidaiyah', 'Tsanawiyah', 'Aliyah']
             <div class="small-label">{{ level }}</div>
             <div class="flex gap-1">
               <label
-                ><select class="field w-20">
+                ><select class="select select-sm field-select bg-white w-20">
                   <option>Kelas 1</option>
                   <option>Kelas 2</option>
                   <option>Kelas 3</option>
@@ -160,80 +148,80 @@ const levels = ['Idadiyah', 'Ibtidaiyah', 'Tsanawiyah', 'Aliyah']
         <div class="card p-2.5">
           <h2 class="section-title">Data Murid</h2>
           <label class="block"
-            ><span class="field-label">Jenis Kelamin Murid</span
-            ><select class="field w-21.25">
+            ><span class="field-label my-2">Jenis Kelamin Murid</span
+            ><select class="select select-sm field-select bg-white w-20">
               <option>Laki-laki</option>
               <option>Perempuan</option>
               <option>Laki-Laki & Perempuan</option>
             </select></label
           >
           <div class="mt-2.75">
-            <h3 class="field-label">Jumlah Murid</h3>
+            <h3 class="field-label my-2">Jumlah Murid</h3>
             <div class="flex gap-1">
               <label>
                 <span class="field-label">Kelas 1</span
-                ><select class="field w-20">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                  <option>6</option>
+                ><select class="select select-sm field-select bg-white w-20">
+                  <option>1 orang</option>
+                  <option>2 orang</option>
+                  <option>3 orang</option>
+                  <option>4 orang</option>
+                  <option>5 orang</option>
+                  <option>6 orang</option>
                 </select>
               </label>
               <label>
                 <span class="field-label">Kelas 2</span
-                ><select class="field w-20">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                  <option>6</option>
+                ><select class="select select-sm field-select bg-white w-20">
+                  <option>1 orang</option>
+                  <option>2 orang</option>
+                  <option>3 orang</option>
+                  <option>4 orang</option>
+                  <option>5 orang</option>
+                  <option>6 orang</option>
                 </select>
               </label>
               <label>
                 <span class="field-label">Kelas 3</span
-                ><select class="field w-20">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                  <option>6</option>
+                ><select class="select select-sm field-select bg-white w-20">
+                  <option>1 orang</option>
+                  <option>2 orang</option>
+                  <option>3 orang</option>
+                  <option>4 orang</option>
+                  <option>5 orang</option>
+                  <option>6 orang</option>
                 </select>
               </label>
               <label>
                 <span class="field-label">Kelas 4</span
-                ><select class="field w-20">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                  <option>6</option>
+                ><select class="select select-sm field-select bg-white w-20">
+                  <option>1 orang</option>
+                  <option>2 orang</option>
+                  <option>3 orang</option>
+                  <option>4 orang</option>
+                  <option>5 orang</option>
+                  <option>6 orang</option>
                 </select>
               </label>
               <label>
                 <span class="field-label">Kelas 5</span
-                ><select class="field w-20">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                  <option>6</option>
+                ><select class="select select-sm field-select bg-white w-20">
+                  <option>1 orang</option>
+                  <option>2 orang</option>
+                  <option>3 orang</option>
+                  <option>4 orang</option>
+                  <option>5 orang</option>
+                  <option>6 orang</option>
                 </select>
               </label>
               <label>
                 <span class="field-label">Kelas 6</span
-                ><select class="field w-20">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                  <option>6</option>
+                ><select class="select select-sm field-select bg-white w-20">
+                  <option>1 orang</option>
+                  <option>2 orang</option>
+                  <option>3 orang</option>
+                  <option>4 orang</option>
+                  <option>5 orang</option>
+                  <option>6 orang</option>
                 </select>
               </label>
             </div>
@@ -244,7 +232,7 @@ const levels = ['Idadiyah', 'Ibtidaiyah', 'Tsanawiyah', 'Aliyah']
           <div class="space-y-2.5">
             <label
               ><span class="field-label">Sakit</span
-              ><select class="field w-15.75">
+              ><select class="select select-sm field-select bg-white w-15.75">
                 <option>1 Hari</option>
                 <option>2 Hari</option>
                 <option>3 Hari</option>
@@ -252,8 +240,8 @@ const levels = ['Idadiyah', 'Ibtidaiyah', 'Tsanawiyah', 'Aliyah']
               </select></label
             >
             <label
-              ><span class="field-label">Pulang</span
-              ><select class="field w-15.75">
+              ><span class="field-label my-4">Pulang</span
+              ><select class="select select-sm field-select bg-white w-20">
                 <option>1 Hari</option>
                 <option>2 Hari</option>
                 <option>3 Hari</option>
@@ -261,8 +249,8 @@ const levels = ['Idadiyah', 'Ibtidaiyah', 'Tsanawiyah', 'Aliyah']
               </select></label
             >
             <label
-              ><span class="field-label">Udzur Lain</span
-              ><select class="field w-15.75">
+              ><span class="field-label my-4">Udzur Lain</span
+              ><select class="select select-sm field-select bg-white w-20">
                 <option>1 Hari</option>
                 <option>2 Hari</option>
                 <option>3 Hari</option>
@@ -270,29 +258,29 @@ const levels = ['Idadiyah', 'Ibtidaiyah', 'Tsanawiyah', 'Aliyah']
               </select></label
             >
             <label
-              ><span class="field-label">Mengajar Al-Qur’an</span
-              ><select class="field w-13.5">
+              ><span class="field-label my-4">Mengajar Al-Qur’an</span
+              ><select class="select select-sm field-select bg-white w-20">
                 <option>Iya</option>
                 <option>Tidak</option>
               </select></label
             >
             <label
-              ><span class="field-label">Mengajar Kitab</span
-              ><select class="field w-13.5">
+              ><span class="field-label my-4">Mengajar Kitab</span
+              ><select class="select select-sm field-select bg-white w-20">
                 <option>Iya</option>
                 <option>Tidak</option>
               </select></label
             >
             <label
-              ><span class="field-label">Imam Sholat Jum’at</span
-              ><select class="field w-13.5">
+              ><span class="field-label my-4">Imam Sholat Jum’at</span
+              ><select class="select select-sm field-select bg-white w-20">
                 <option>Iya</option>
                 <option>Tidak</option>
               </select></label
             >
             <label
-              ><span class="field-label">Imam Sholat Maktubah</span
-              ><select class="field w-13.5">
+              ><span class="field-label my-4">Imam Sholat Maktubah</span
+              ><select class="select select-sm field-select bg-white w-20">
                 <option>Iya</option>
                 <option>Tidak</option>
               </select></label
@@ -304,7 +292,7 @@ const levels = ['Idadiyah', 'Ibtidaiyah', 'Tsanawiyah', 'Aliyah']
           <div class="mb-3.25">
             <span class="field-label">Hubungan dengan PJGT</span>
             <div class="flex gap-0.5 text-[17px] leading-none">
-              <select class="field w-21.25">
+              <select class="select select-sm field-select bg-white w-20">
                 <option>Baik</option>
                 <option>Cukup Baik</option>
                 <option>Sangat Baik</option>
@@ -314,7 +302,7 @@ const levels = ['Idadiyah', 'Ibtidaiyah', 'Tsanawiyah', 'Aliyah']
           <div class="mb-3.25">
             <span class="field-label">Hubungan dengan Guru Lain</span>
             <div class="flex gap-0.5 text-[17px] leading-none">
-              <select class="field w-21.25">
+              <select class="select select-sm field-select bg-white w-20">
                 <option>Baik</option>
                 <option>Cukup Baik</option>
                 <option>Sangat Baik</option>
@@ -337,7 +325,7 @@ const levels = ['Idadiyah', 'Ibtidaiyah', 'Tsanawiyah', 'Aliyah']
           </label>
           <label class="mb-2.5 block"
             ><span class="field-label">Bisyaroh Bulan Ini</span
-            ><select class="field w-13.5">
+            ><select class="select select-sm field-select bg-white w-20">
               <option>700</option>
               <option>800</option>
               <option>900</option>
@@ -346,7 +334,7 @@ const levels = ['Idadiyah', 'Ibtidaiyah', 'Tsanawiyah', 'Aliyah']
           >
           <label class="block"
             ><span class="field-label">Pemberian Bisyaroh</span
-            ><select class="field w-27.75">
+            ><select class="select select-sm field-select bg-white w-20">
               <option>Tepat waktu</option>
               <option>Terlambat</option>
             </select></label
