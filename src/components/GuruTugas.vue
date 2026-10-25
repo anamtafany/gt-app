@@ -7,6 +7,7 @@ const nama = ref('Khoirul Anam')
 const umur = ref(25)
 const alamat = ref('Jl. Merdeka No. 123 Kota Bangkalan, Provinsi Jawa Timur, 12345 Indonesia ')
 const tahunAjaran = ref('1448-1449 H')
+const tempatTugas = ref('Pondok Pesantren Al-Muhajirin')
 
 // Gambar default jika user belum mengunggah foto
 const defaultImage = 'https://unsplash.com'
@@ -75,13 +76,31 @@ const aktif = ref(true)
 
               <!-- Detail Teks -->
               <div class="flex-1 min-w-0">
-                <h3 class="text-[clamp(10px,4cqw,20px)] font-bold truncate leading-tight">
-                  Khoirul Anam
-                </h3>
-                <p class="text-[clamp(8px,2.5cqw,14px)] text-blue-200 truncate text-wrap">
-                  Guru Tugas | Pondok Pesantren Syaichona Moh. Cholil Bangkalan
-                </p>
-                <p class="text-[14px] opacity-60 mt-1 font-mono">ID: {{ idGt }}</p>
+                <div class="grid items-baseline font-medium tracking-wide">
+                  <h3 class="text-[clamp(10px,4cqw,20px)] font-bold truncate leading-tight">
+                    Khoirul Anam
+                  </h3>
+                </div>
+                <!-- <div class="grid items-baseline font-medium tracking-wide">
+                  <p class="text-[clamp(8px,2.5cqw,14px)] text-blue-200 truncate text-wrap">
+                    Guru Tugas | Pondok Pesantren Syaichona Moh. Cholil Bangkalan
+                  </p>
+                </div> -->
+                <div class="grid grid-cols-[80px_12px_1fr] items-baseline">
+                  <p class="text-[14px] opacity-60 mt-1 font-mono">ID</p>
+                  <p class="text-[14px] opacity-60 mt-1 font-mono">:</p>
+                  <p class="text-[14px] opacity-60 mt-1 font-mono">{{ idGt }}</p>
+                </div>
+                <div class="grid grid-cols-[80px_12px_1fr] items-baseline">
+                  <p class="text-[14px] opacity-60 mt-1 font-mono">Tahun Ajaran</p>
+                  <p class="text-[14px] opacity-60 mt-1 font-mono">:</p>
+                  <p class="text-[14px] opacity-60 mt-1 font-mono">{{ tahunAjaran }}</p>
+                </div>
+                <div class="grid grid-cols-[80px_12px_1fr] items-baseline">
+                  <p class="text-[14px] opacity-60 mt-1 font-mono">Alamat</p>
+                  <p class="text-[14px] opacity-60 mt-1 font-mono">:</p>
+                  <p class="text-[14px] opacity-60 mt-1 font-mono">{{ tahunAjaran }}</p>
+                </div>
               </div>
             </div>
 
@@ -104,53 +123,6 @@ const aktif = ref(true)
               @change="handleImageUpload"
               class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 cursor-pointer"
             />
-          </div>
-          <h2 class="text-xl font-bold text-green-800 mb-4">Biodata Guru Tugas</h2>
-          <!-- Detail Informasi (Menggunakan Grid agar titik dua sejajar) -->
-          <div
-            class="flex-1 w-full space-y-3 text-slate-700 text-sm sm:text-base justify-center items-center"
-          >
-            <!-- Baris ID GT -->
-            <div class="grid grid-cols-[80px_12px_1fr] items-baseline font-medium tracking-wide">
-              <span class="text-gray-400 font-semibold text-xs tracking-wider uppercase"
-                >ID GT</span
-              >
-              <span class="text-emerald-700 font-semibold">:</span>
-              <span class="text-slate-800 text-base leading-relaxed">{{ idGt }}</span>
-            </div>
-
-            <!-- Baris Nama -->
-            <div class="grid grid-cols-[80px_12px_1fr] items-baseline">
-              <span class="text-gray-400 font-semibold text-xs tracking-wider uppercase">Nama</span>
-              <span class="text-emerald-700 font-semibold">:</span>
-              <span class="text-slate-800 text-base leading-relaxed">{{ nama }}</span>
-            </div>
-
-            <!-- Baris Umur -->
-            <div class="grid grid-cols-[80px_12px_1fr] items-baseline">
-              <span class="text-gray-400 font-semibold text-xs tracking-wider uppercase">Umur</span>
-              <span class="text-emerald-700 font-semibold">:</span>
-              <span class="text-slate-800 text-base leading-relaxed">{{ umur }}</span>
-            </div>
-
-            <!-- Baris Alamat -->
-            <div class="grid grid-cols-[80px_12px_1fr] items-baseline">
-              <span class="text-gray-400 font-semibold text-xs tracking-wider uppercase"
-                >Alamat</span
-              >
-              <span class="text-emerald-700 font-semibold">:</span>
-              <span class="text-slate-800 text-base leading-relaxed">{{ alamat }}</span>
-            </div>
-
-            <!-- Baris Tahun Ajaran -->
-            <div class="grid grid-cols-[80px_12px_1fr] items-baseline">
-              <span
-                class="text-gray-400 font-semibold text-xs tracking-wider uppercase leading-none"
-                >Tahun Ajaran</span
-              >
-              <span class="text-emerald-700 font-semibold">:</span>
-              <span class="text-slate-800 text-base leading-relaxed">{{ tahunAjaran }}</span>
-            </div>
           </div>
         </div>
       </div>

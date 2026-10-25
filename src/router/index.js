@@ -11,6 +11,11 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
+      path: '',
+      name: 'dashboard',
+      component: Dashboard,
+    },
+    {
       path: '/',
       name: 'dashboard',
       component: Dashboard,
