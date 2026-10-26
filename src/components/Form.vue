@@ -2,6 +2,17 @@
 // // BARU
 import { ref } from 'vue'
 import { dataGuruTugas } from '../stores/data'
+import { computed } from 'vue'
+
+// Mengambil bulan terkini secara otomatis dengan format YYYY-MM
+const currentMonth = computed(() => {
+  const now = new Date()
+  const year = now.getFullYear()
+  // Ditambah 1 karena Januari dimulai dari 0, lalu ditambah 0 di depan jika di bawah 10
+  const month = String(now.getMonth() + 1).padStart(2, '0')
+
+  return `${year}-${month}`
+})
 
 const data = dataGuruTugas()
 
@@ -98,11 +109,12 @@ const levels = ['Idadiyah', 'Ibtidaiyah', 'Tsanawiyah', 'Aliyah']
           </div>
           <div v-for="guru in data.detailData" :key="guru.id" class="mt-2.75 space-y-2.5">
             <label
-              ><span class="field-label my-2">Laporan Bulan</span
-              ><select class="select select-sm field-select bg-white w-20">
+              ><span class="field-label my-2">Laporan Bulan</span>
+              <input id="current-month" type="month" :value="currentMonth" readonly class="field" />
+              <!-- <select class="select select-sm field-select bg-white w-20">
                 <option>September</option>
                 <option>Oktober</option>
-              </select>
+              </select> -->
             </label>
             <label
               ><span class="field-label my-4">Nama GT</span
@@ -116,7 +128,10 @@ const levels = ['Idadiyah', 'Ibtidaiyah', 'Tsanawiyah', 'Aliyah']
               ><span class="field-label my-4">Nama Madrasah/Ponpes</span
               ><input v-model="guru.tempatTugas" type="text" class="field"
             /></label>
-            <label><span class="field-label my-4">Alamat</span><input v-model="guru.alamat" type="text" class="field" /></label>
+            <label
+              ><span class="field-label my-4">Alamat</span
+              ><input v-model="guru.alamat" type="text" class="field"
+            /></label>
           </div>
         </div>
         <div class="card p-2.5">
