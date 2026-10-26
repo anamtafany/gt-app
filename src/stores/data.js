@@ -26,15 +26,18 @@ export const useLaporanStore = defineStore('laporan', () => {
 
   return { daftarLaporan, totalLaporan, tambahLaporanBaru }
 })
+export const dataGuruTugas = defineStore('guru', () => {
+  const detailData = ref([
+    {
+      id: 1448001,
+      nama: 'Khoirul Anam',
+      umur: 25,
+      alamat: 'Jl. Cokro no. 1234',
+      tahunAjaran: 2026,
+      tempatTugas: 'MDS. Nurul Hidayah',
+      status: false,
+    },
+  ])
 
-export default defineStore('statusStore', () => {
-  // Boolean state: true (aktif/kuning), false (tidak aktif/merah)
-  const isActive = ref(true)
-
-  // Fungsi untuk mengubah status
-  function toggleStatus() {
-    isActive.value = !isActive.value
-  }
-
-  return { isActive, toggleStatus }
+  return { detailData }
 })
