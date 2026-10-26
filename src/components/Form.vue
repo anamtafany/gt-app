@@ -1,16 +1,19 @@
 <script setup>
 // // BARU
 import { ref } from 'vue'
+import { dataGuruTugas } from '../stores/data'
+
+const data = dataGuruTugas()
 
 // State reaktif untuk menampung data pilihan
-const selectedOption = ref('')
+// const selectedOption = ref('')
 
 // Contoh dataset dinamis yang biasa Anda gunakan
-const daftarTugas = ref([
-  { id: 1, nama: 'Desain Layout Flowbite' },
-  { id: 2, nama: 'Integrasi API Pinia Store' },
-  { id: 3, nama: 'Perbaikan Validasi Form' },
-])
+// const daftarTugas = ref([
+//   { id: 1, nama: 'Desain Layout Flowbite' },
+//   { id: 2, nama: 'Integrasi API Pinia Store' },
+//   { id: 3, nama: 'Perbaikan Validasi Form' },
+// ])
 
 // // LAMA
 // import { ref } from 'vue'
@@ -93,7 +96,7 @@ const levels = ['Idadiyah', 'Ibtidaiyah', 'Tsanawiyah', 'Aliyah']
               </p>
             </div>
           </div>
-          <div class="mt-2.75 space-y-2.5">
+          <div v-for="guru in data.detailData" :key="guru.id" class="mt-2.75 space-y-2.5">
             <label
               ><span class="field-label my-2">Laporan Bulan</span
               ><select class="select select-sm field-select bg-white w-20">
@@ -101,12 +104,19 @@ const levels = ['Idadiyah', 'Ibtidaiyah', 'Tsanawiyah', 'Aliyah']
                 <option>Oktober</option>
               </select>
             </label>
-            <label><span class="field-label my-4">Nama GT</span><input class="field" /></label>
-            <label><span class="field-label my-4">Nama PJGT</span><input class="field" /></label>
             <label
-              ><span class="field-label my-4">Nama Madrasah/Ponpes</span><input class="field"
+              ><span class="field-label my-4">Nama GT</span
+              ><input v-model="guru.nama" type="text" class="field"
             /></label>
-            <label><span class="field-label my-4">Alamat</span><input class="field" /></label>
+            <label
+              ><span class="field-label my-4">Nama PJGT</span
+              ><input v-model="guru.namaPjgt" type="text" class="field"
+            /></label>
+            <label
+              ><span class="field-label my-4">Nama Madrasah/Ponpes</span
+              ><input v-model="guru.tempatTugas" type="text" class="field"
+            /></label>
+            <label><span class="field-label my-4">Alamat</span><input v-model="guru.alamat" type="text" class="field" /></label>
           </div>
         </div>
         <div class="card p-2.5">

@@ -35,6 +35,7 @@ export const dataGuruTugas = defineStore('guru', () => {
       alamat: 'Jl. Cokro no. 1234',
       tahunAjaran: 2026,
       tempatTugas: 'MDS. Nurul Hidayah',
+      namaPjgt: 'KH. Muhammad Karom',
       status: true,
     },
   ])
