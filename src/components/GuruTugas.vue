@@ -4,8 +4,6 @@ import { dataGuruTugas } from '../stores/data'
 
 const data = dataGuruTugas()
 
-
-
 // Gambar default jika user belum mengunggah foto
 const defaultImage = 'https://unsplash.com'
 const avatarUrl = ref(defaultImage)
@@ -18,8 +16,6 @@ const handleImageUpload = (event) => {
     avatarUrl.value = URL.createObjectURL(file)
   }
 }
-
-
 </script>
 
 <template>
@@ -77,6 +73,11 @@ const handleImageUpload = (event) => {
 
               <!-- Detail Teks -->
               <div v-for="guru in data.detailData" :key="guru.id" class="flex-1 min-w-0">
+                <div class="grid grid-cols-[80px_12px_1fr] items-baseline">
+                  <p class="text-[14px] opacity-60 mt-1 font-mono">Id</p>
+                  <p class="text-[14px] opacity-60 mt-1 font-mono">:</p>
+                  <p class="text-[14px] opacity-60 mt-1 font-mono">{{ guru.id }}</p>
+                </div>
                 <div
                   class="grid grid-cols-[80px_12px_1fr] items-baseline font-medium tracking-wide"
                 >
@@ -85,12 +86,6 @@ const handleImageUpload = (event) => {
                   <h3 class="text-[14px] font-bold opacity-100 truncate leading-tight font-mono">
                     {{ guru.nama }}
                   </h3>
-                </div>
-
-                <div class="grid grid-cols-[80px_12px_1fr] items-baseline">
-                  <p class="text-[14px] opacity-60 mt-1 font-mono">ID</p>
-                  <p class="text-[14px] opacity-60 mt-1 font-mono">:</p>
-                  <p class="text-[14px] opacity-60 mt-1 font-mono">{{ guru.id }}</p>
                 </div>
                 <div class="grid grid-cols-[80px_12px_1fr] items-baseline">
                   <p
