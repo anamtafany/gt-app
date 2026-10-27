@@ -20,6 +20,8 @@
     "@vue/devtools-api": "^8.2.1",
     "pinia": "^4.1.0",
     "postcss": "^8.5.31",
+    "qrcode-vue": "^1.2.0",
+    "qrcode.vue": "^3.11.0",
     "tailwindcss": "^4.3.3",
     "vue": "rc",
     "vue-router": "^5.3.1"
