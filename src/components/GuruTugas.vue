@@ -1,32 +1,14 @@
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed } from 'vue'
 import { dataGuruTugas } from '../stores/data'
-import { QrcodeVue } from 'qrcode-vue'
+import QrcodeVue from 'qrcode.vue'
 
 const data = dataGuruTugas()
+const qrSize = ref(200)
 
-// Ambil array data dari Pinia secara reaktif
-const guru = computed(() => data.detailData)
-
-// State local untuk mencatat ID guru yang dipilih di dropdown
-const selectedId = ref(null)
-
-// Mengatur guru pertama sebagai default saat halaman dimuat
-onMounted(() => {
-  if (guru.value && guru.value.length > 0) {
-    selectedId.value = guru.value[0].id
-  }
-})
-
-// Cari objek data guru berdasarkan ID yang sedang dipilih di dropdown
-const guruTerpilih = computed(() => {
-  if (!guru.value) return null
-  return guru.value.find((guru) => guru.id === selectedId.value) || null
-})
-
-// Mengonversi ID (number) menjadi String untuk kebutuhan qrcode-vue
-const guruIdString = computed(() => {
-  return guruTerpilih.value ? guruTerpilih.value.id.toString() : ''
+// Menggunakan optional chaining yang aman untuk mengambil ID guru
+const dataId = computed(() => {
+  return data.detailData?.[0]?.id?.toString() || ''
 })
 
 // Gambar default jika user belum mengunggah foto
@@ -196,58 +178,31 @@ const handleImageUpload = (event) => {
             />
           </div>
 
-          <!-- Dropdown Pemilih Guru -->
-          <div class="w-full max-w-sm rounded-xl bg-white p-4 shadow-md border border-slate-100">
-            <label
-              for="guru-select"
-              class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2"
-            >
-              Pilih Guru Tugas:
-            </label>
-            <select
-              id="guru-select"
-              v-model="selectedId"
-              class="w-full rounded-lg border border-slate-200 bg-slate-50 p-2.5 text-sm font-medium text-slate-800 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-            >
-              <option v-for="item in listGuru" :key="item.id" :value="item.id">
-                {{ item.nama }} (ID: {{ item.id }})
-              </option>
-            </select>
-          </div>
-
-          <!-- Tampilan Card QR Code Dinamis -->
           <div
-            v-if="guruTerpilih"
-            class="w-full max-w-sm rounded-2xl bg-white p-6 shadow-xl border border-slate-100 transition-all duration-300"
+            class="w-full max-w-sm rounded-2xl bg-white p-6 shadow-sm flex flex-col items-center"
           >
-            <!-- Bagian Atas: Nama dan Tempat Tugas -->
-            <div class="text-center mb-4">
-              <h2 class="text-xl font-bold text-slate-800">{{ guruTerpilih.nama }}</h2>
-              <p class="mt-1 text-sm text-slate-400">{{ guruTerpilih.tempatTugas }}</p>
-            </div>
+            <h2 class="mb-4 text-lg font-bold text-slate-800 text-center">QR Code Guru Tugas</h2>
 
-            <!-- Area QR Code (Kotak putih lonjong di gambar Anda yang sekarang sudah berisi QR) -->
+            <!-- Area Tampilan QR Code -->
             <div
-              class="my-6 flex justify-center rounded-2xl bg-slate-50/50 py-6 border border-slate-100"
+              v-if="dataId"
+              class="flex flex-col items-center justify-center rounded-xl border border-dashed border-slate-300 bg-slate-50 p-6 w-full"
             >
-              <QrcodeVue
-                :value="guruIdString"
-                :size="160"
-                level="H"
-                render-as="svg"
-                class="rounded-lg shadow-inner bg-white p-2"
-              />
+              <div class="rounded-lg bg-white p-3 shadow-xs">
+                <!-- Value otomatis berisi ID dari Pinia -->
+                <QrcodeVue :value="dataId" :size="qrSize" level="H" />
+              </div>
+
+              <!-- Menampilkan ID & Nama dari Pinia -->
+              <p
+                class="mt-4 text-sm font-semibold text-slate-700 bg-slate-200 px-3 py-1 rounded-sm"
+              >
+                ID: {{ dataId }}
+              </p>
             </div>
 
-            <!-- Bagian Bawah: Informasi ID Guru -->
-            <div class="rounded-xl bg-slate-900 p-4 text-center">
-              <span class="block text-xs font-medium tracking-wider text-slate-400 uppercase mb-1"
-                >ID GURU TUGAS</span
-              >
-              <span class="font-mono text-xl font-bold text-emerald-400">{{
-                guruTerpilih.id
-              }}</span>
-            </div>
+            <!-- Tampilan Loading jika data belum siap -->
+            <div v-else class="text-sm text-slate-500 py-6">Memuat data...</div>
           </div>
         </div>
       </div>
